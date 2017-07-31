@@ -1,0 +1,8 @@
+---
+# Spring properties
+spring:
+  application:
+     name: import-service  # Service registers under this name
+  cloud:
+    config:
+      uri: http://10.99.18.152:50316

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<ObjectTypeSet xmlns="urn:rm.bulk.hcl.neo.com:schema.objecttype.20141806"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:rm.bulk.hcl.neo.com:schema.objecttype.20141806 file:///C:/Users/vsrivpa/Documents/NetBeansProjects/repository-mgr/src/main/resources/xsd/objectType.xsd">
+	<TypeInformation description="DM Document" label="DM Document"
+		name="dm_document" parentName="dm_sysobject">
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Name" length="255" name="object_name" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Title" length="400" name="title" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Subject" length="192" name="subject" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="true" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Authors" length="48" name="authors" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="true" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Keywords" length="48" name="keywords" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="false"
+			label="Application Type" length="32" name="a_application_type" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="false"
+			label="Status" length="16" name="a_status" />
+		<PropertyInformation datatype="BOOLEAN"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Hidden" length="0" name="a_is_hidden" />
+		<PropertyInformation datatype="DATE" description=""
+			isArray="false" isDynamic="false" isHidden="false" isNotNull="false"
+			isReadOnly="false" isRequired="false" isSearchable="false" label="Retained"
+			length="0" name="a_retention_date" />
+		<PropertyInformation datatype="BOOLEAN"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="false"
+			label="Archive" length="0" name="a_archive" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="false"
+			label="Compound Architecture" length="16" name="a_compound_architecture" />
+		<PropertyInformation datatype="BOOLEAN"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Link Resolved" length="0" name="a_link_resolved" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="false"
+			label="Resolution Version" length="32" name="resolution_label" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Format" length="32" name="a_content_type" />
+		<PropertyInformation datatype="BOOLEAN"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Full Text Indexed" length="0" name="a_full_text" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="false"
+			label="Storage Type" length="64" name="a_storage_type" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Owner Name" length="32" name="owner_name" />
+		<PropertyInformation datatype="INTEGER"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Owner Permission" length="0" name="owner_permit">
+			<ValueMap label="None" value="1" />
+			<ValueMap label="Browse" value="2" />
+			<ValueMap label="Read" value="3" />
+			<ValueMap label="Relate" value="4" />
+			<ValueMap label="Version" value="5" />
+			<ValueMap label="Write" value="6" />
+			<ValueMap label="Delete" value="7" />
+		</PropertyInformation>
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Group Name" length="32" name="group_name" />
+		<PropertyInformation datatype="INTEGER"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Group Permit" length="0" name="group_permit">
+			<ValueMap label="None" value="1" />
+			<ValueMap label="Browse" value="2" />
+			<ValueMap label="Read" value="3" />
+			<ValueMap label="Relate" value="4" />
+			<ValueMap label="Version" value="5" />
+			<ValueMap label="Write" value="6" />
+			<ValueMap label="Delete" value="7" />
+		</PropertyInformation>
+		<PropertyInformation datatype="INTEGER"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="World Permissions" length="0" name="world_permit">
+			<ValueMap label="None" value="1" />
+			<ValueMap label="Browse" value="2" />
+			<ValueMap label="Read" value="3" />
+			<ValueMap label="Relate" value="4" />
+			<ValueMap label="Version" value="5" />
+			<ValueMap label="Write" value="6" />
+			<ValueMap label="Delete" value="7" />
+		</PropertyInformation>
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="User Comments" length="120" name="log_entry" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="false"
+			label="ACL Domain" length="32" name="acl_domain" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="false"
+			label="ACL Name" length="32" name="acl_name" />
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="false"
+			label="Special Application" length="32" name="a_special_app" />
+	</TypeInformation>
+</ObjectTypeSet>

@@ -1,0 +1,12 @@
+---
+# Spring properties
+spring:
+  application:
+     name: eloader-process-service  # Service registers under this name
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  cloud:
+    config:
+      uri: http://localhost:50316
+logging:
+  file: process-service.log      

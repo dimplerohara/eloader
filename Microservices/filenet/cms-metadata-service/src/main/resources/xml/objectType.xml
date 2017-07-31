@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<ObjectTypeSet xmlns="urn:rm.bulk.hcl.neo.com:schema.objecttype.20141806"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:rm.bulk.hcl.neo.com:schema.objecttype.20141806 file:///C:/Users/vsrivpa/Documents/NetBeansProjects/repository-mgr/src/main/resources/xsd/objectType.xsd">	
+	<TypeInformation description="CMS Document" label="CMS Document"
+		name="DOCUMENT" parentName="IndependentObject">
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Owner" length="255" name="owner" />		
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="title" length="255" name="title" />	
+		<PropertyInformation datatype="DATE"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Retention Date" length="255" name="Retention Date" />	
+			
+			
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Mime Type" length="255" name="Mime Type" />
+		<PropertyInformation datatype="LONG"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Compound Document State" length="255" name="Compound Document State" />				
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Component Binding Label" length="255" name="Component Binding Label" />		
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Entry Template Object Store Name" length="255" name="Entry Template Object Store Name" />	
+		<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Entry Template Launched Workflow Number" length="255" name="Entry Template Launched Workflow Number" />	
+		
+		
+		
+		
+		<PropertyInformation datatype="BOOLEAN"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Inherit Parent Permission" length="255" name="Inherit Parent Permissions" />	
+			<PropertyInformation datatype="BOOLEAN"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="IsHiddenContainer" length="255" name="IsHiddenContainer" />	
+			<PropertyInformation datatype="STRING"
+			description="" isArray="false" isDynamic="false" isHidden="false"
+			isNotNull="false" isReadOnly="false" isRequired="false" isSearchable="true"
+			label="Container Type" length="255" name="Container Type" />		
+	</TypeInformation>
+</ObjectTypeSet>

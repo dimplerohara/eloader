@@ -1,0 +1,63 @@
+---
+# Spring properties
+spring:
+  application:
+     name: ingestion-scan-microservice  # Service registers under this name
+     
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  cloud:
+    config:
+      uri: http://10.99.18.152:50316
+      
+  activemq: 
+    broker-url: tcp://10.99.18.152:61616
+  data:
+    mongodb:
+      database: test
+      host: 10.99.18.152
+      port: 50321
+      repositories:
+        enabled: true
+  
+      # HTTP Server
+server:
+  port: 50333   # HTTP (Tomcat) port
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.99.18.152:50311/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    preferIpAddress : true
+heavyJobMinSize: 1073741824
+
+jms:
+  queue:
+    heavyjob: queue.eloader.heavy
+    lightjob: queue.eloader.light
+    
+dctm:
+  docbase: SAKOS
+  defaultPassword: Hello123
+  allowed_import_content_size: 40
+  upload_transfer_stream: 1
+  download_transfer_stream: 5
+  retry_count: 20
+  transport_server_id: 1
+  repo_id: 3
+  SFTPLocation: /home/dctm
+  JobType: INGESTION
+  
+fixedRate:
+  in:
+    milliseconds: 50000
+  
+eloader: 
+  updateJobStatusURL: http://ingestion-process-service/services/job/updateStatus
+  addJobDetailsURL: http://ingestion-process-service/services/job/addJob
+  addTransportServerURL: http://ingestion-process-service/services/transport/addTransportServer
+  addObjectPathURL: http://ingestion-process-service/services/job/addPath
+  getJobDetailsURL: http://ingestion-process-service/services/job/
+  

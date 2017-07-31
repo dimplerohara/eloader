@@ -1,0 +1,9 @@
+---
+server:
+  port: 50317
+
+
+turbine:
+  aggregator:
+  appConfig: eloader-service, eloader-process-service, ELOADER-CONFIG, ELOADER-CONSUMER, DCTM-IMPORT-SERVICE
+  clusterNameExpression: new String('default')

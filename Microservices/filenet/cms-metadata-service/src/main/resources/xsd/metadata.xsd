@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (x64) (http://www.altova.com) by Pankaj (HCL) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:md="urn:rm.bulk.hcl.neo.com:schema.metadata.20141306" targetNamespace="urn:rm.bulk.hcl.neo.com:schema.metadata.20141306" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<complexType name="attribute">
+		<sequence>
+			<element name="value" type="string" minOccurs="0" maxOccurs="1"/>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="type" type="string" use="optional"/>
+	</complexType>
+	<complexType name="object">
+		<sequence>
+			<element name="attribute" type="md:attribute" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<element name="objects">
+		<complexType>
+			<sequence>
+				<element name="object" type="md:object" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

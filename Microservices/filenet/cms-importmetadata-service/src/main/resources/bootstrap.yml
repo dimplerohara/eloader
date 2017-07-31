@@ -1,0 +1,10 @@
+---
+# Spring properties
+spring:
+  application:
+     name: importmetadata-service  # Service registers under this name
+  cloud:
+    config:
+      uri: http://10.99.18.152:50316
+      
+processServiceUrl: http://ingestion-process-service/services/job/addJobStatus

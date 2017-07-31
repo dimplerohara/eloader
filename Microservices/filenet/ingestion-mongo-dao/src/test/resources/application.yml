@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      database: test
+      host: 10.99.18.152
+      port: 50321
+      repositories:
+         enabled: true

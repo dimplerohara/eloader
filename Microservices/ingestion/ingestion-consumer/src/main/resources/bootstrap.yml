@@ -1,0 +1,43 @@
+---
+# Spring properties
+spring:
+  application:
+     name: eloader-consumer  # Service registers under this name
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  main:
+    web-environment: false
+  activemq:
+    broker-url: tcp://10.99.18.152:61616
+    user: admin
+    password: admin
+  cloud:
+    config:
+      uri: http://localhost:50316
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.99.18.152:50311/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    preferIpAddress : true
+
+jms:
+  queue:
+    heavyjob: queue.eloader.heavy
+    lightjob: queue.eloader.light
+    heavyjobWrapper: queue.eloader.heavyWrapper
+    lightjobWrapper: queue.eloader.lightWrapper
+
+eloader: 
+  processServiceUrl: http://ingestion-process-service/services/bulkJob
+  importServiceUrl: http://ingestion-wrapper-service/services/cms/dctm/import/
+  processQueueUrl: http://ingestion-process-service/services/updateJobStatus
+  importMetadataServiceUrl: http://importmetadata-service/services/cms/dctm/importmetadata/
+  exportMetadataServiceUrl: http://exportmetadata-service/services/cms/dctm/exportMetadata/
+  exportServiceUrl: http://export-service/services/cms/dctm/export/
+  ingestionServiceUrl: http://ingestion-wrapper-service/services/cms/dctm/import/
+  dctm: 
+      userName: dmadmin
+      password: Hello123

@@ -1,0 +1,10 @@
+---
+# Spring properties
+spring:
+  application:
+     name: eloader-trigger-service  # Service registers under this name
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  cloud:
+    config:
+      uri: http://localhost:50316

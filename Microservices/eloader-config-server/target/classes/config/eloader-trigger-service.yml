@@ -1,0 +1,39 @@
+---
+# Spring properties
+spring:
+  activemq: 
+    broker-url: tcp://10.99.18.152:61616
+  
+    
+# Map the error path to error template (for Thymeleaf)
+error:
+  path: /error
+
+# HTTP Server
+server:
+  port: 50313   # HTTP (Tomcat) port
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.99.18.152:50311/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    preferIpAddress : true
+
+heavyJobMinSize: 1073741824
+
+jms:
+  queue:
+    heavyjob: queue.eloader.heavy
+    lightjob: queue.eloader.light
+    
+eloader: 
+  updateJobStatusURL: http://eloader-process-service/services/job/updateStatus
+  addJobDetailsURL: http://eloader-process-service/services/job/addJob
+  addTransportServerURL: http://eloader-process-service/services/transport/addTransportServer
+  addObjectPathURL: http://eloader-process-service/services/job/addPath
+  getJobDetailsURL: http://eloader-process-service/services/job/
+  addCancelCheckoutJobURL: http://eloader-process-service/services/job/cancelcheckout
+  cancelJobURL: http://eloader-process-service/services/job/cancel/
+  deleteJobURL: http://eloader-process-service/services/job/delete/

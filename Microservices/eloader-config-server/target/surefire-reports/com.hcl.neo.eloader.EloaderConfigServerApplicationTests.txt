@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.hcl.neo.eloader.EloaderConfigServerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.105 sec - in com.hcl.neo.eloader.EloaderConfigServerApplicationTests

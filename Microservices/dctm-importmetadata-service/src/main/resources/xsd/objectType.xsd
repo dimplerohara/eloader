@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (x64) (http://www.altova.com) by Pankaj (HCL) -->
+<xs:schema xmlns="urn:rm.bulk.hcl.neo.com:schema.objecttype.20141806" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:rm.bulk.hcl.neo.com:schema.objecttype.20141806">
+	<xs:complexType name="PropertyInformation">
+		<xs:sequence>
+			<xs:element name="DefaultValues" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ValueAssist" type="ValueAssist" minOccurs="0"/>
+			<xs:element name="ValueMap" type="ValueInformation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Dependencies" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="datatype" type="DataType" use="required"/>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="label" type="xs:string"/>
+		<xs:attribute name="description" type="xs:string"/>
+		<xs:attribute name="isArray" type="xs:boolean" use="required"/>
+		<xs:attribute name="isSearchable" type="xs:boolean" use="required"/>
+		<xs:attribute name="isDynamic" type="xs:boolean" use="required"/>
+		<xs:attribute name="length" type="xs:int" use="required"/>
+		<xs:attribute name="isNotNull" type="xs:boolean" use="required"/>
+		<xs:attribute name="isRequired" type="xs:boolean" use="required"/>
+		<xs:attribute name="isReadOnly" type="xs:boolean" use="required"/>
+		<xs:attribute name="isHidden" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ValueAssist">
+		<xs:sequence>
+			<xs:element name="Values" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="allowUserValues" type="xs:boolean" use="required"/>		
+	</xs:complexType>
+	<xs:complexType name="ValueInformation">
+			<xs:sequence/>
+		<xs:attribute name="value" type="xs:string"/>
+		<xs:attribute name="label" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="TypeInformation">
+		<xs:sequence>
+			<xs:element name="PropertyInformation" type="PropertyInformation" minOccurs="0" maxOccurs="unbounded">
+				<xs:key name="pname">
+					<xs:selector xpath="."/>
+					<xs:field xpath="@name"/>
+				</xs:key>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="label" type="xs:string"/>
+		<xs:attribute name="description" type="xs:string"/>
+		<xs:attribute name="parentName" type="xs:string"/>
+	</xs:complexType>
+	<xs:simpleType name="DataType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="STRING"/>
+			<xs:enumeration value="SHORT"/>
+			<xs:enumeration value="INTEGER"/>
+			<xs:enumeration value="LONG"/>
+			<xs:enumeration value="DOUBLE"/>
+			<xs:enumeration value="DATE"/>
+			<xs:enumeration value="BOOLEAN"/>
+			<xs:enumeration value="OBJECT_ID"/>
+			<xs:enumeration value="CUSTOM"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ObjectTypeSet" type="ObjectTypeSet"/>
+	<xs:complexType name="ObjectTypeSet">
+		<xs:sequence>
+			<xs:element name="TypeInformation" type="TypeInformation" maxOccurs="unbounded">
+				<xs:key name="type">
+					<xs:selector xpath="."/>
+					<xs:field xpath="@name"/>
+				</xs:key>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

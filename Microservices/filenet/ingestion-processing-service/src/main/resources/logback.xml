@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- configuration file for LogBack (slf4J implementation)
+See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-through-the-java-loggers/ -->
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+    <!-- To enable JMX Management -->
+    <jmxConfigurator/>
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+    
+    <appender name="JSON" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <file>logs/app.log.json</file> 
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>${PID}: %-5level %logger{0} - %msg%n</pattern>
+        </layout>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+        <fileNamePattern>logs/app-%d{yyyy-MM-dd}.%i.log.json</fileNamePattern>
+        <maxFileSize>10MB</maxFileSize> 
+    	</rollingPolicy>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <includeCallerInfo>true</includeCallerInfo>
+           <!--  <pattern>${PID}: %-5level %logger{0} - %msg%n</pattern>-->
+            <customFields>{"appname":"process-service"}</customFields>
+        </encoder>
+    </appender>
+    
+    
+    <root level="info">
+        <appender-ref ref="FILE" />
+		<!-- Methode 2 --> 
+		<appender-ref ref="JSON" /> 
+	<!-- 	<appender-ref ref="STDOUT" /> -->
+    </root>
+    <!-- Specify logging levels -->
+    <logger name="hcl.neo" level="INFO"/>
+</configuration>

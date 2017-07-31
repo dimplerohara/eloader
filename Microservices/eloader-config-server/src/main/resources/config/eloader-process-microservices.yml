@@ -1,0 +1,24 @@
+---
+spring: 
+  data:
+    mongodb: 
+      database: test
+      host: 10.99.18.147
+      port: 50321
+    repositories:
+      enabled:  true
+      
+#Bulk.Properties
+bulk: 
+  workspacePath: /opt/customer/dctm/apps/ftpdropbox/work/
+  centralServerPath: /opt/customer/dctm/apps/ftpdropbox/
+  cleanupWorkspace: false
+  uploadStream: 1
+  downloadStream: 5
+  retryCount: 20
+  ftpConnectRetryCount: 3
+
+dctm:
+  defaultPassword: Hello123
+  importContentUrl: http:/dctm-import-service/services/cms/dctm/import/
+  exportContentUrl: http://dctm-export-service/services/cms/dctm/export/

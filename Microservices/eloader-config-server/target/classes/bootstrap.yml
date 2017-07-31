@@ -1,0 +1,17 @@
+---
+debug: false
+
+spring:
+  application:
+    name: eloader-config
+  profiles:
+    active: native
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port:50316}
+    preferIpAddress : true
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:10.99.18.152}:${eureka.port:50311}/eureka/
+

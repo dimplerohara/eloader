@@ -1,0 +1,56 @@
+---
+
+spring: 
+  data:
+    mongodb: 
+      database: test
+      host: 10.99.18.152
+      port: 50321
+    repositories:
+      enabled:  true
+  activemq: 
+    broker-url: tcp://10.99.18.152:61616
+    
+#Bulk.Properties
+bulk: 
+  workspacePath: /opt/customer/dctm/apps/ftpdropbox/work/
+  centralServerPath: /opt/customer/dctm/apps/ftpdropbox/
+  cleanupWorkspace: false
+  uploadStream: 1
+  downloadStream: 5
+  retryCount: 20
+  ftpConnectRetryCount: 3
+
+dctm:
+  defaultPassword: Hello123
+  importContentUrl: http://import-service/services/cms/dctm/import/
+  exportContentUrl: http://export-service/services/cms/dctm/export/
+  checkoutContentUrl: http://export-service/services/cms/dctm/export/
+  importMetadataContentUrl: http://importmetadata-service/services/cms/dctm/importmetadata/
+  exportMetadataContentUrl: http://export-service/services/cms/dctm/exportMetadata/
+  
+jms:
+  queue:
+    heavyjobWrapper: queue.eloader.heavyWrapper
+    lightjobWrapper: queue.eloader.lightWrapper
+  
+heavyJobMinSize: 1073741824
+
+# Map the error path to error template (for Thymeleaf)
+error:
+  path: /error
+
+# HTTP Server
+server:
+  port: 50314   # HTTP (Tomcat) port
+
+# Discovery Server Access
+#  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
+#  2. Define URL of registration server (defaultZone)
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.99.18.152:50311/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    preferIpAddress : true

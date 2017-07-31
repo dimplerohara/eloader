@@ -1,0 +1,45 @@
+---
+spring:    
+  activemq:
+      broker-url: tcp://10.99.18.152:61616
+      
+jms:
+  queue: 
+    processService: processQueue
+      
+#Bulk.Properties
+bulk: 
+  workspacePath: /opt/customer/dctm/apps/ftpdropbox/work/
+  centralServerPath: /opt/customer/dctm/apps/ftpdropbox/
+  defaultImportLocation: /Testing
+  cleanupWorkspace: false
+  uploadStream: 1
+  downloadStream: 5
+  retryCount: 20
+  ftpConnectRetryCount: 3
+
+dctm:
+  defaultPassword: Hello123
+  importContentUrl: http:/import-service/services/cms/dctm/import/
+  exportContentUrl: http://export-service/services/cms/dctm/export/
+
+logging:
+  file: importmetadataservice.log
+  
+# HTTP Server
+server:
+  port: 0   # HTTP (Tomcat) port
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.99.18.152:50311/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    preferIpAddress : true
+    nonSecurePort: ${server.port:50318}
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+    

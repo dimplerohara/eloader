@@ -1,0 +1,42 @@
+---
+# Spring properties
+spring:
+  application:
+     name: export-service  # Service registers under this name
+  cloud:
+    config:
+      #uri: http://10.99.18.152:50316
+      uri: http://localhost:50316
+  activemq:
+      #broker-url: tcp://10.99.18.152:61616
+      broker-url: tcp://localhost:61616
+
+jms: 
+  queue: 
+    processService: processQueue
+
+# Map the error path to error template (for Thymeleaf)
+error:
+  path: /error
+
+# HTTP Server
+server:
+  port: 50366   # HTTP (Tomcat) port
+
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://10.99.18.152:50311/eureka/
+      defaultZone: http://localhost:50311/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+    preferIpAddress : true
+    nonSecurePort: ${server.port:50315}
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}  
+
+
+bulk: 
+  defaultImportLocation: /Testing
+  workspacePath: /opt/customer/dctm/apps/ftpdropbox/work/
+    

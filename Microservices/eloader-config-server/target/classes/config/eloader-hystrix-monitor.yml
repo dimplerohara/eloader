@@ -1,0 +1,17 @@
+---
+eureka: 
+  instance:
+    nonSecurePort: ${server.port:50317}
+    preferIpAddress : true
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:10.99.18.152}:${eureka.port:50311}/eureka/
+
+
+turbine:
+  aggregator:
+  appConfig: eloader-trigger-service, eloader-process-service, ELOADER-CONSUMER, IMPORT-SERVICE
+  clusterNameExpression: new String('default')
+
+server:
+  port: 50317
